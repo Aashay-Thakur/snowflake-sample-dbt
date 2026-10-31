@@ -1,0 +1,23 @@
+name: snowflake_sample_dbt
+version: "1.0.0"
+config-version: 2
+
+profile: snowflake_sample_dbt
+
+require-dbt-version: ">=1.8.0"
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - target
+  - dbt_packages
+
+models:
+  snowflake_sample_dbt:
+    staging:
+      +materialized: view

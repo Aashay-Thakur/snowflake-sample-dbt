@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: stg_customer
+    description: Staging view of TPCH customer.
+    columns:
+      - name: c_custkey
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    description: Staging view of TPCH orders.
+    columns:
+      - name: o_orderkey
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_lineitem
+    description: Staging view of TPCH lineitem. Primary key is (l_orderkey, l_linenumber).
+    tests:
+      - unique_combination_of_columns:
+          combination_of_columns:
+            - l_orderkey
+            - l_linenumber
+    columns:
+      - name: l_orderkey
+        tests:
+          - not_null
+      - name: l_linenumber
+        tests:
+          - not_null
+
+  - name: stg_part
+    description: Staging view of TPCH part.
+    columns:
+      - name: p_partkey
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_supplier
+    description: Staging view of TPCH supplier.
+    columns:
+      - name: s_suppkey
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_partsupp
+    description: Staging view of TPCH partsupp. Primary key is (ps_partkey, ps_suppkey).
+    tests:
+      - unique_combination_of_columns:
+          combination_of_columns:
+            - ps_partkey
+            - ps_suppkey
+    columns:
+      - name: ps_partkey
+        tests:
+          - not_null
+      - name: ps_suppkey
+        tests:
+          - not_null
+
+  - name: stg_nation
+    description: Staging view of TPCH nation.
+    columns:
+      - name: n_nationkey
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_region
+    description: Staging view of TPCH region.
+    columns:
+      - name: r_regionkey
+        tests:
+          - not_null
+          - unique

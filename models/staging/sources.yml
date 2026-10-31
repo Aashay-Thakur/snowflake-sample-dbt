@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: tpch
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH
+    description: Snowflake sample TPC-H tables.
+    tables:
+      - name: customer
+      - name: orders
+      - name: lineitem
+      - name: part
+      - name: supplier
+      - name: partsupp
+      - name: nation
+      - name: region
