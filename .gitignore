@@ -2,3 +2,9 @@ target/
 dbt_packages/
 logs/
 profiles.yml
+keys/
+**/*.p8
+**/*.pub
+dbt-venv/
+.venv/
+dbt-env/

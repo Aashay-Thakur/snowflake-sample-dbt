@@ -1,7 +1,11 @@
 # Copy to profiles.yml (gitignored). Do not put secrets in this example.
-# SNOWFLAKE_ROLE must be a query role: read SNOWFLAKE_SAMPLE_DATA.TPCH,
+# SNOWFLAKE_ROLE must be a query role: read SNOWFLAKE_SAMPLE_DATA.TPCH_SF10,
 # and create views in SNOWFLAKE_DATABASE.SNOWFLAKE_SCHEMA.
 # Swap password for private_key_path if you authenticate with a key.
+# Set SNOWFLAKE_PRIVATE_KEY_PATH to an absolute path. On Windows use
+# forward slashes (C:/Users/you/keys/rsa_key.p8). A backslash path is a
+# YAML escape, and a relative path is resolved after dbt changes into
+# the project directory, so keys/rsa_key.p8 will not be found.
 
 snowflake_sample_dbt:
   target: dev

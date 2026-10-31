@@ -3,8 +3,8 @@ version: 2
 sources:
   - name: tpch
     database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH
-    description: Snowflake sample TPC-H tables.
+    schema: TPCH_SF10
+    description: Snowflake sample TPC-H tables (scale factor 10).
     tables:
       - name: customer
       - name: orders
